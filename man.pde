@@ -17,6 +17,7 @@ class Man
   {
     show();
     head();
+    move();
   }
 
   void show()
@@ -52,6 +53,45 @@ class Man
     {
       headX = x + 10;
       headY = y;
+    }
+  }
+  
+  void move()
+  {
+    if(keyPressed == true)
+    {
+      if(key == 'a')
+      {
+        x -= 2;
+        facingTop = false;
+        facingBottom = false;
+        facingLeft = true;
+        facingRight = false;
+      }
+      if(key == 'd')
+      {
+        x += 2;
+        facingTop = false;
+        facingBottom = false;
+        facingLeft = false;
+        facingRight = true;
+      }
+      if(key == 'w')
+      {
+        y -= 2;
+        facingTop = true;
+        facingBottom = false;
+        facingLeft = false;
+        facingRight = false;
+      }
+      if(key == 's')
+      {
+        y += 2;
+        facingTop = false;
+        facingBottom = true;
+        facingLeft = false;
+        facingRight = false;
+      }
     }
   }
 }
